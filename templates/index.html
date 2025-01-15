@@ -1,0 +1,79 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger</title>
+    <style>
+        @media (max-width: 600px) {
+            .responsive-container {
+                padding: 15px !important;
+            }
+
+            h1 {
+                font-size: 1.5rem !important;
+            }
+
+            select, input, textarea {
+                font-size: 0.9rem !important;
+            }
+
+            input[type="submit"] {
+                width: 100% !important;
+                height: 45px !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f4f4f9;">
+    <a href="need_help" style="position: absolute; top: 10px; right: 10px; font-size: 0.9rem; text-decoration: none; color: #007BFF; padding: 5px 10px; border: 1px solid #007BFF; border-radius: 4px; transition: background-color 0.3s ease, color 0.3s ease;" onmouseover="this.style.backgroundColor='#007BFF';this.style.color='#fff';" onmouseout="this.style.backgroundColor='transparent';this.style.color='#007BFF';">
+        Need Help?
+    </a>
+    
+    <form action="" method="post" class="responsive-container" style="width: 90%; max-width: 500px; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        {% csrf_token %}
+        <h1 style="text-align: center; color: #333;">Messenger</h1>
+
+        <select name="message_type" id="message_type" required onchange="toggleFields()" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+            <option value="">--Select Option--</option>
+            <option value="person">Specific Person</option>
+            <option value="group">WhatsApp Group</option>
+        </select>
+
+        <div id="person_fields" style="display: none;">
+            <input type="text" name="phone_number" placeholder=" Enter phone number with country code (+91)" style="width: 96%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+        </div>
+
+        <div id="group_fields" style="display: none;">
+            <input type="text" name="group_code" placeholder="Enter group code" style="width: 95%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;">
+        </div>
+
+        <textarea name="message" placeholder="Enter your message here" required style="width: 95%; padding: 10px; height: 100px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; resize: none;"></textarea>
+
+        <input type="submit" value="Submit" style="width: 100%; background-color: #4643f1; color: #fff; border: none; padding: 10px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s ease;">
+
+    </form>
+    
+    <script>
+        function toggleFields() {
+            const messageType = document.getElementById('message_type').value;
+            const personFields = document.getElementById('person_fields');
+            const groupFields = document.getElementById('group_fields');
+
+            if (messageType === 'person') {
+                personFields.style.display = 'block';
+                groupFields.style.display = 'none';
+            } else if (messageType === 'group') {
+                groupFields.style.display = 'block';
+                personFields.style.display = 'none';
+            } else {
+                personFields.style.display = 'none';
+                groupFields.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

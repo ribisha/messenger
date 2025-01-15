@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Need Help</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1 {
+            color: #007BFF;
+            text-align: center;
+        }
+
+        h2 {
+            color: #444;
+            margin-top: 20px;
+        }
+
+        p, ul, ol {
+            margin: 15px 0;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        ol {
+            padding-left: 20px;
+        }
+
+        .highlight {
+            background-color: #eef;
+            padding: 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" style="position: absolute; top: 10px; left: 10px; font-size: 0.9rem; text-decoration: none; color: #007BFF; padding: 5px 10px; border: 1px solid #007BFF; border-radius: 4px; transition: background-color 0.3s ease, color 0.3s ease;" onmouseover="this.style.backgroundColor='#007BFF';this.style.color='#fff';" onmouseout="this.style.backgroundColor='transparent';this.style.color='#007BFF';">
+        Back to home
+    </a>
+
+    <h1>Need Help?</h1>
+    <p class="highlight">
+        <strong>PyWhatKit Messaging Interface</strong><br>
+        This interface enables users to send messages to both individual WhatsApp numbers and WhatsApp groups seamlessly.
+    </p>
+
+    <h2>Features</h2>
+    <ul>
+        <li><strong>Send to Individuals:</strong> Enter the recipient's phone number with country code to send a message.</li>
+        <li><strong>Send to Groups:</strong> Use the group's invite link to extract the required group invite code and send messages.</li>
+    </ul>
+
+    <h2>How It Works</h2>
+    <ol>
+        <li><strong>Message Sending Process:</strong>
+            <ul>
+                <li>The interface opens WhatsApp Web automatically upon initiating a message.</li>
+                <li>The message is sent after WhatsApp Web completes loading and the recipient is identified.</li>
+            </ul>
+        </li>
+        <li><strong>Group Messaging:</strong>
+            <ul>
+                <li>To send a message to a WhatsApp group, you need the group's invite link.</li>
+                <li>Extract the group invite code from the link (e.g., for 
+                    <code>https://chat.whatsapp.com/your_group_invite_code</code>, the code is 
+                    <code>your_group_invite_code</code>) and input it into the form provided by the interface.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h2>Notes</h2>
+    <ul>
+        <li>Ensure that the WhatsApp Web interface is set up and logged in before using this tool.</li>
+        <li>Make sure the internet connection is stable for smooth operation.</li>
+    </ul>
+
+    <h2>Example Usage</h2>
+    <ul>
+        <li><strong>Individual Messaging:</strong> Enter the phone number in the format supported by WhatsApp (e.g., <code>+1XXXXXXXXXX</code>).</li>
+        <li><strong>Group Messaging:</strong> Extract and enter the group invite code as described above.</li>
+    </ul>
+
+</body>
+</html>
